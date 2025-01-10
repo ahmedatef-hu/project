@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportSpotter - عرض اللاعبين</title>
+  <link rel="stylesheet" href="b.css">
+</head>
+<body>
+  <header>
+    <h1>SportSpotter</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="ابحث عن اللاعبين..." id="search">
+    </div>
+    <button onclick="scrollToPlayers()">عرض اللاعبين</button> <!-- زر الانتقال -->
+  </header>
+<div class="filter">
+    <label for="skills">المهارات:</label>
+    <select id="skills">
+      <option value="all">جميع المهارات</option>
+      <option value="shooting">تسديد</option>
+      <option value="passing">تمرير</option>
+      <option value="defense">دفاع</option>
+      <option value="speed">سرعة</option>
+    </select>
+    <label for="skills">المراكز:</label>
+    <select id="skills">
+      <option value="all">جميع المراكز</option>
+      <option value="shooting">حارس مرمي</option>
+      <option value="passing">مدافع</option>
+      <option value="defense">خط وسط</option>
+      <option value="speed">مهاجم</option>
+    </select>
+    
+    <label for="rating">التقييم:</label>
+    <select id="rating">
+      <option value="all">جميع التقييمات</option>
+      <option value="4">4+ (أفضل)</option>
+      <option value="3">3+ (متوسط)</option>
+    </select>
+    
+    <label for="location">الموقع:</label>
+    <select id="location">
+      <option value="all">جميع المواقع</option>
+      <option value="cairo">القاهرة</option>
+      <option value="alexandria">الإسكندرية</option>
+    </select>
+  </div>
+  
+  <!-- <section class="players" id="playersSection">
+    <div class="player">
+      <img src="player1.jpg" alt="لاعب 1">
+      <h3> احمد عاطف</h3>
+      <p>حارس مرمي</p>
+      <p>2009</p>
+      <p>المهارات: الارماء وقوه التسديد </p>
+      <p>التقييم: 4.5/5</p>
+    </div>
+    <div class="player">
+      <img src="player2.jpg" alt="لاعب 2">
+      <h3>حمزه مصطفي</h3>
+      <p>مدافع</p>
+      <p>2009</p>
+      <p>المهارات: دفاع، سرعة</p>
+      <p>التقييم: 4.7/5</p>
+    </div>
+    <div class="player">
+        <img src="player2.jpg" alt="لاعب 2">
+        <h3>اياد هاني</h3>
+        <p>مهاجم</p>
+        <p>2009</p>
+        <p>المهارات: قوه التسديد والسرعه والمراوغه</p>
+        <p>التقييم: 4.7/5</p>
+      </div>
+      <div class="player">
+        <img src="player2.jpg" alt="لاعب 2">
+        <h3>محمد عطيتو</h3>
+        <p>مدافع</p>
+        <p>2008</p>
+        <p>المهارات: السرعه والدفاع</p>
+        <p>التقييم: 4.7/5</p>
+      </div>
+      <div class="player">
+        <img src="player2.jpg" alt="لاعب 2">
+        <h3>يحي سامي</h3>
+        <p>مدافع</p>
+        <p>2009</p>
+        <p>المهارات: السرعه والدفاع</p>
+        <p>التقييم: 4.7/5</p>
+      </div>
+
+  </section> -->
+  <section class="players" id="playersSection">
+    <div class="player-card" data-skills="shooting,passing" data-rating="4.5" data-location="cairo">
+      <img src="ahmed.jpg" alt="لاعب 1" class="player-img">
+      <div class="player-info">
+        <h3>احمد عاطف</h3>
+        <p>حارس مرمي</p>
+        <p>2009</p>
+        <p>المهارات : الارماء وقوه التسديد</p>
+        <p>التقييم: 4.5/5</p>
+        <p>الموقع :القاهرة</p>
+      </div>
+    </div>
+    <div class="player-card" data-skills="shooting,passing" data-rating="4.5" data-location="cairo">
+        <img src="حمزه.jpg.jpg" alt="لاعب 1" class="player-img">
+        <div class="player-info">
+          <h3>حمزه مصطفي</h3>
+          <p>مدافع</p>
+          <p>2009</p>
+          <p>المهارات : المراوغه وقوه التسديد</p>
+          <p>التقييم: 4.5/5</p>
+          <p>الموقع :القاهرة</p>
+        </div>
+      </div>
+      <div class="player-card" data-skills="shooting,passing" data-rating="4.5" data-location="cairo">
+        <img src="eyad.jpg.jpg" alt="لاعب 1" class="player-img">
+        <div class="player-info">
+          <h3>اياد هاني</h3>
+          <p>مهاجم</p>
+          <p>2007</p>
+          <p>المهارات : المراوغه وقوه التسديد</p>
+          <p>التقييم: 4.5/5</p>
+          <p>الموقع :القاهرة</p>
+        </div>
+      </div>
+      <div class="player-card" data-skills="shooting,passing" data-rating="4.5" data-location="cairo">
+        <img src="ateto.png" alt="لاعب 1" class="player-img">
+        <div class="player-info">
+          <h3>محمد حسني</h3>
+          <p>مدافع</p>
+          <p>2008</p>
+          <p>المهارات : السرعه والدفاع</p>
+          <p>التقييم: 4.5/5</p>
+          <p>الموقع :القاهرة</p>
+        </div>
+      </div>
+      <div class="player-card" data-skills="shooting,passing" data-rating="4.5" data-location="cairo">
+        <img src="yehia.jpg" alt="لاعب 1" class="player-img">
+        <div class="player-info">
+          <h3>يحي سامي</h3>
+          <p>مدافع</p>
+          <p>2009</p>
+          <p>المهارات : السرعه وقوه التسديد</p>
+          <p>التقييم: 4.5/5</p>
+          <p>الموقع :القاهرة</p>
+        </div>
+      </div>
+            
+  </section>
+  
+  <script>
+    // وظيفة الانتقال إلى قسم اللاعبين عند النقر على الزر
+    function scrollToPlayers() {
+      document.getElementById('playersSection').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
